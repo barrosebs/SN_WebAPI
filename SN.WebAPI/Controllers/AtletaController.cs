@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using SN.WebAPI.Data;
 using SN.WebAPI.Model;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace SN.WebAPI.Controllers
 {
@@ -18,11 +20,11 @@ namespace SN.WebAPI.Controllers
 
         }
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             try
             {
-                var results = _context.atletas.ToList();
+                var results = await _context.atletas.ToListAsync();
                 return Ok(results);   
             }
             catch (System.Exception)
@@ -31,11 +33,12 @@ namespace SN.WebAPI.Controllers
             }
         }
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
             try
             {
-                return Ok(_context.atletas.FirstOrDefault(x => x.Id == id));   
+                var result = await _context.atletas.FirstOrDefaultAsync(x => x.Id == id);
+                return Ok(result);   
             }
             catch (System.Exception)
             {
