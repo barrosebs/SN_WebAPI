@@ -1,3 +1,58 @@
-<div *ngFor="let atleta of atletas" >
-  {{atleta.nome}}
+<div class="form-inline">
+ <label class="mr-2"> Filtro:</label><div class="form-group mb-2">
+    <input type="text" class="form-control mr-2" 
+    placeholder="buscar"
+    [(ngModel)]="filtroLista">
+  </div>
 </div>
+<h3>Filtro: {{filtroLista}}</h3>
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th><button class="btn btn-outline-primary"
+        (click)="alterarImagem()">
+        Mostrar Imagem
+      </button></th>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Apelido</th>
+      <th>Nascimento</th>
+      <th>Telefone</th>
+      <th>Função</th>
+      <th>Comissão</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="atletas && atletas.length">
+    <tr *ngFor="let atleta of atletasFiltrados">
+    <td>
+      <img *ngIf="mostrarImagem"
+       src="http://localhost:5000/img/{{atleta.imgUrl}}"
+      [style.width.px]="imagemLargura"
+      [style.margin.px]="imagemMargen"
+      >
+    </td>
+    <td>{{atleta.id}}</td>
+      <td>{{atleta.nome}}</td>
+      <td>{{atleta.apelido}}</td>
+      <td>{{atleta.nascimento}}</td>
+      <td>{{atleta.telefone}}</td>
+      <td>{{atleta.funcaoAtleta}}</td>
+      <td>{{atleta.comissao}}</td>
+      <td>
+        <button class="btn btn-success"></button>
+        <button class="btn btn-danger"></button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!atletas.length">
+    <tr>
+      <td colspan="8" class="text-center">
+        <h5>Desculpe-me!</h5>
+        <h3>
+          Nenhum atleta encontrado!
+        </h3>
+      </td>
+    </tr>
+  </tfoot>
+</table>

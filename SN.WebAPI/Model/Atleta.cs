@@ -27,5 +27,6 @@ namespace SN.WebAPI.Model
         public DateTime? DataInscricao { get; set; }
         public int FuncaoAtleta { get; set; }
         public bool Comissao { get; set; }
+        public string ImgUrl { get; set; }
     }
 }

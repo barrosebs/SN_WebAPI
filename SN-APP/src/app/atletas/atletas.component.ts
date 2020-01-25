@@ -8,12 +8,34 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AtletasComponent implements OnInit {
 
+
+  _filtroLista: string;
+  get filtroLista(): string {
+    return this._filtroLista;
+  }
+  set filtroLista(value: string) {
+    this._filtroLista = value;
+    this.atletasFiltrados = this.filtroLista ? this.filtrarAtletas(this.filtroLista) : this.atletas;
+  }
+
+  atletasFiltrados: any = [];
+  imagemLargura = 80;
+  imagemMargen = 2;
+  mostrarImagem = false;
+
   atletas: any = [];
 
   constructor( private http: HttpClient) { }
 
   ngOnInit() {
     this.getAtletas();
+  }
+
+  filtrarAtletas(filtrarPor: string): any {
+    filtrarPor = filtrarPor.toLocaleLowerCase();
+    return this.atletas.filter(
+      atleta => atleta.nome.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+    );
   }
 
   getAtletas() {
@@ -24,6 +46,10 @@ export class AtletasComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  alterarImagem() {
+    this.mostrarImagem = !this.mostrarImagem;
   }
 
 }
