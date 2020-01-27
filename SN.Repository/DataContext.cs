@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using SN.WebAPI.Model;
+using SN.Domain;
 
-namespace SN.WebAPI.Data
+namespace SN.Repository
 {
     public class DataContext : DbContext 
     {

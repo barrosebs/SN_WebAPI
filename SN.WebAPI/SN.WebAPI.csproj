@@ -11,7 +11,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SN-Repository\SN-Repository.csproj" />
-    <ProjectReference Include="..\SN-Domain\SN-Domain.csproj" />
+    <ProjectReference Include="..\SN.Domain\SN.Domain.csproj" />
+    <ProjectReference Include="..\SN.Repository\SN.Repository.csproj" />
   </ItemGroup>
 </Project>

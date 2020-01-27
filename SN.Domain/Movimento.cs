@@ -1,6 +1,6 @@
 using System;
 
-namespace SN.WebAPI.Model
+namespace SN.Domain
 {
     public class Movimento
     {

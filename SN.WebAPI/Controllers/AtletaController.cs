@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using SN.WebAPI.Data;
-using SN.WebAPI.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using SN.Repository;
 
 namespace SN.WebAPI.Controllers
 {

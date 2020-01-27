@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SN.WebAPI.Model
+namespace SN.Domain
 {
     public class Controle
     {
