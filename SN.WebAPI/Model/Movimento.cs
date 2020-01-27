@@ -7,7 +7,7 @@ namespace SN.WebAPI.Model
         public int Id { get; set; }
         public string Nome { get; set; }
         public DateTime? DataCadastro { get; set; }
-        public int? IdControle { get; set; }
+        public int? ControleId { get; set; }
         public Controle Controle { get; set; }
     }
 }

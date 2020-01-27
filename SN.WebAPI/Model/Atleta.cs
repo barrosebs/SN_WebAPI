@@ -28,7 +28,7 @@ namespace SN.WebAPI.Model
         public int FuncaoAtleta { get; set; }
         public bool Comissao { get; set; }
         public string ImgUrl { get; set; }
-        public int? IdControle { get; set; }
+        public int? ControleId { get; set; }
         public Controle Controle { get; set; }
     }
 }
