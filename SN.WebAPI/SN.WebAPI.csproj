@@ -3,11 +3,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1"/>
-    <PackageReference Include="System.Data.SQLite" Version="1.0.112.0"/>
-    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.112"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1"/>
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.112.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.112" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SN-Repository\SN-Repository.csproj" />
+    <ProjectReference Include="..\SN-Domain\SN-Domain.csproj" />
   </ItemGroup>
 </Project>
